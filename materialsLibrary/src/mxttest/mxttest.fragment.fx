@@ -1,4 +1,8 @@
 ﻿#version 300 es
+
+#extension GL_EXT_shader_texture_lod: enable
+#extension GL_OES_standard_derivatives : enable
+
 precision highp float;
 
 in vec3 v_position;
@@ -152,7 +156,7 @@ void main(void) {
     /// Setup Detail Albedo
 #ifdef DETAIL_ALBEDO
     vec4 detailSample = GammaToLinearSpace(texture(_DetailAlbedoMap, detailUV));
-#if defined(_DETAILBLEND_MULTIPLY)
+#ifdef DETAILBLEND_MULTIPLY
 	albedo.rgb *= detailSample.rgb; /// Make sure to change to detail UV
 #else
 	albedo.rgb *= LerpWhiteTo(detailSample.rgb * colorSpaceDouble.rgb, detailSample.a);

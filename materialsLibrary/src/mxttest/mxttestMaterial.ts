@@ -26,6 +26,10 @@ class MXTTestMaterialDefines extends MaterialDefines {
     public EMISSION_MAP = false;
     public DETAIL_ALBEDO = false;
     public DETAIL_NORMAL = false;
+    public DETAILBLEND_MULTIPLY = false;
+    public ALPHA_TEST = false;
+    public ALPHA_BLEND = false;
+    public ALPHA_PREMULTIPLY = false;
 
     constructor() {
         super();
