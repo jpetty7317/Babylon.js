@@ -1468,6 +1468,83 @@ declare module "babylonjs-materials/water/waterMaterial" {
 declare module "babylonjs-materials/water/index" {
     export * from "babylonjs-materials/water/waterMaterial";
 }
+declare module "babylonjs-materials/mxttest/mxttest.fragment" {
+    import "babylonjs/Shaders/ShadersInclude/helperFunctions";
+    import "babylonjs/Shaders/ShadersInclude/lightFragmentDeclaration";
+    import "babylonjs/Shaders/ShadersInclude/lightUboDeclaration";
+    import "babylonjs/Shaders/ShadersInclude/lightsFragmentFunctions";
+    import "babylonjs/Shaders/ShadersInclude/shadowsFragmentFunctions";
+    import "babylonjs/Shaders/ShadersInclude/clipPlaneFragmentDeclaration";
+    import "babylonjs/Shaders/ShadersInclude/fogFragmentDeclaration";
+    import "babylonjs/Shaders/ShadersInclude/clipPlaneFragment";
+    import "babylonjs/Shaders/ShadersInclude/depthPrePass";
+    import "babylonjs/Shaders/ShadersInclude/lightFragment";
+    import "babylonjs/Shaders/ShadersInclude/fogFragment";
+    /** @hidden */
+    export var mxttestPixelShader: {
+        name: string;
+        shader: string;
+    };
+}
+declare module "babylonjs-materials/mxttest/mxttest.vertex" {
+    import "babylonjs/Shaders/ShadersInclude/bonesDeclaration";
+    import "babylonjs/Shaders/ShadersInclude/instancesDeclaration";
+    import "babylonjs/Shaders/ShadersInclude/clipPlaneVertexDeclaration";
+    import "babylonjs/Shaders/ShadersInclude/fogVertexDeclaration";
+    import "babylonjs/Shaders/ShadersInclude/lightFragmentDeclaration";
+    import "babylonjs/Shaders/ShadersInclude/lightUboDeclaration";
+    import "babylonjs/Shaders/ShadersInclude/instancesVertex";
+    import "babylonjs/Shaders/ShadersInclude/bonesVertex";
+    import "babylonjs/Shaders/ShadersInclude/clipPlaneVertex";
+    import "babylonjs/Shaders/ShadersInclude/fogVertex";
+    import "babylonjs/Shaders/ShadersInclude/shadowsVertex";
+    /** @hidden */
+    export var mxttestVertexShader: {
+        name: string;
+        shader: string;
+    };
+}
+declare module "babylonjs-materials/mxttest/mxttestMaterial" {
+    import { Nullable } from "babylonjs/types";
+    import { Color3, Matrix } from "babylonjs/Maths/math";
+    import { IAnimatable } from "babylonjs/Misc/tools";
+    import { BaseTexture } from "babylonjs/Materials/Textures/baseTexture";
+    import { PushMaterial } from "babylonjs/Materials/pushMaterial";
+    import { AbstractMesh } from "babylonjs/Meshes/abstractMesh";
+    import { SubMesh } from "babylonjs/Meshes/subMesh";
+    import { Mesh } from "babylonjs/Meshes/mesh";
+    import { Scene } from "babylonjs/scene";
+    import "babylonjs-materials/mxttest/mxttest.fragment";
+    import "babylonjs-materials/mxttest/mxttest.vertex";
+    export class MXTTestMaterial extends PushMaterial {
+        private _diffuseTexture;
+        diffuseTexture: BaseTexture;
+        diffuseColor: Color3;
+        private _disableLighting;
+        disableLighting: boolean;
+        private _maxSimultaneousLights;
+        maxSimultaneousLights: number;
+        private _renderId;
+        constructor(name: string, scene: Scene);
+        needAlphaBlending(): boolean;
+        needAlphaBlendingForMesh(mesh: AbstractMesh): boolean;
+        needAlphaTesting(): boolean;
+        getAlphaTestTexture(): Nullable<BaseTexture>;
+        isReadyForSubMesh(mesh: AbstractMesh, subMesh: SubMesh, useInstances?: boolean): boolean;
+        bindForSubMesh(world: Matrix, mesh: Mesh, subMesh: SubMesh): void;
+        getAnimatables(): IAnimatable[];
+        getActiveTextures(): BaseTexture[];
+        hasTexture(texture: BaseTexture): boolean;
+        dispose(forceDisposeEffect?: boolean): void;
+        clone(name: string): MXTTestMaterial;
+        serialize(): any;
+        getClassName(): string;
+        static Parse(source: any, scene: Scene, rootUrl: string): MXTTestMaterial;
+    }
+}
+declare module "babylonjs-materials/mxttest/index" {
+    export * from "babylonjs-materials/mxttest/mxttestMaterial";
+}
 declare module "babylonjs-materials/index" {
     export * from "babylonjs-materials/cell/index";
     export * from "babylonjs-materials/custom/index";
@@ -1484,6 +1561,7 @@ declare module "babylonjs-materials/index" {
     export * from "babylonjs-materials/terrain/index";
     export * from "babylonjs-materials/triPlanar/index";
     export * from "babylonjs-materials/water/index";
+    export * from "babylonjs-materials/mxttest/index";
 }
 declare module "babylonjs-materials/legacy/legacy-cell" {
     export * from "babylonjs-materials/cell/index";
@@ -1509,6 +1587,9 @@ declare module "babylonjs-materials/legacy/legacy-lava" {
 declare module "babylonjs-materials/legacy/legacy-mix" {
     export * from "babylonjs-materials/mix/index";
 }
+declare module "babylonjs-materials/legacy/legacy-mxttest" {
+    export * from "babylonjs-materials/mxttest/index";
+}
 declare module "babylonjs-materials/legacy/legacy-normal" {
     export * from "babylonjs-materials/normal/index";
 }
@@ -1533,6 +1614,7 @@ declare module "babylonjs-materials/legacy/legacy-water" {
 declare module "babylonjs-materials/legacy/legacy" {
     export * from "babylonjs-materials/index";
 }
+
 declare module "babylonjs-materials" {
     export * from "babylonjs-materials/legacy/legacy";
 }
@@ -2521,4 +2603,45 @@ declare module BABYLON {
         static Parse(source: any, scene: BABYLON.Scene, rootUrl: string): WaterMaterial;
         static CreateDefaultMesh(name: string, scene: BABYLON.Scene): BABYLON.Mesh;
     }
-}
+}
+declare module BABYLON {
+    /** @hidden */
+    export var mxttestPixelShader: {
+        name: string;
+        shader: string;
+    };
+}
+declare module BABYLON {
+    /** @hidden */
+    export var mxttestVertexShader: {
+        name: string;
+        shader: string;
+    };
+}
+declare module BABYLON {
+    export class MXTTestMaterial extends BABYLON.PushMaterial {
+        private _diffuseTexture;
+        diffuseTexture: BABYLON.BaseTexture;
+        diffuseColor: BABYLON.Color3;
+        private _disableLighting;
+        disableLighting: boolean;
+        private _maxSimultaneousLights;
+        maxSimultaneousLights: number;
+        private _renderId;
+        constructor(name: string, scene: BABYLON.Scene);
+        needAlphaBlending(): boolean;
+        needAlphaBlendingForMesh(mesh: BABYLON.AbstractMesh): boolean;
+        needAlphaTesting(): boolean;
+        getAlphaTestTexture(): BABYLON.Nullable<BABYLON.BaseTexture>;
+        isReadyForSubMesh(mesh: BABYLON.AbstractMesh, subMesh: BABYLON.SubMesh, useInstances?: boolean): boolean;
+        bindForSubMesh(world: BABYLON.Matrix, mesh: BABYLON.Mesh, subMesh: BABYLON.SubMesh): void;
+        getAnimatables(): BABYLON.IAnimatable[];
+        getActiveTextures(): BABYLON.BaseTexture[];
+        hasTexture(texture: BABYLON.BaseTexture): boolean;
+        dispose(forceDisposeEffect?: boolean): void;
+        clone(name: string): MXTTestMaterial;
+        serialize(): any;
+        getClassName(): string;
+        static Parse(source: any, scene: BABYLON.Scene, rootUrl: string): MXTTestMaterial;
+    }
+}

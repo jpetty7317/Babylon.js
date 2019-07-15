@@ -41907,9 +41907,9 @@ declare module BABYLON {
          */
         updateGizmoPositionToMatchAttachedMesh: boolean;
         /**
-         * When set, the gizmo will always appear the same size no matter where the camera is (default: false)
+         * When set, the gizmo will always appear the same size no matter where the camera is (default: true)
          */
-        protected _updateScale: boolean;
+        updateScale: boolean;
         protected _interactionsEnabled: boolean;
         protected _attachedMeshChanged(value: Nullable<AbstractMesh>): void;
         private _beforeRenderObserver;
@@ -59671,6 +59671,7 @@ declare module BABYLON {
         shader: string;
     };
 }
+
 // Mixins
 interface Window {
     mozIndexedDB: IDBFactory;
@@ -63865,6 +63866,7 @@ declare module BABYLON.GUI {
         protected _arrangeChildren(): void;
     }
 }
+
 declare module BABYLON {
     /**
      * Mode that determines the coordinate system to use.
@@ -65954,6 +65956,7 @@ declare module BABYLON {
         private _parseASCII;
     }
 }
+
 declare module BABYLON {
     /**
      * Class for generating OBJ data from a Babylon scene.
@@ -67031,6 +67034,7 @@ declare module BABYLON {
         static CreateSTL(meshes: Mesh[], download?: boolean, fileName?: string, binary?: boolean, isLittleEndian?: boolean): any;
     }
 }
+
 /**
  * @ignoreChildren
  * @ignore
@@ -68926,6 +68930,48 @@ declare module BABYLON {
 }
 declare module BABYLON {
     /** @hidden */
+    export var mxttestPixelShader: {
+        name: string;
+        shader: string;
+    };
+}
+declare module BABYLON {
+    /** @hidden */
+    export var mxttestVertexShader: {
+        name: string;
+        shader: string;
+    };
+}
+declare module BABYLON {
+    export class MXTTestMaterial extends BABYLON.PushMaterial {
+        private _diffuseTexture;
+        diffuseTexture: BABYLON.BaseTexture;
+        diffuseColor: BABYLON.Color3;
+        private _disableLighting;
+        disableLighting: boolean;
+        private _maxSimultaneousLights;
+        maxSimultaneousLights: number;
+        private _renderId;
+        constructor(name: string, scene: BABYLON.Scene);
+        needAlphaBlending(): boolean;
+        needAlphaBlendingForMesh(mesh: BABYLON.AbstractMesh): boolean;
+        needAlphaTesting(): boolean;
+        getAlphaTestTexture(): BABYLON.Nullable<BABYLON.BaseTexture>;
+        isReadyForSubMesh(mesh: BABYLON.AbstractMesh, subMesh: BABYLON.SubMesh, useInstances?: boolean): boolean;
+        bindForSubMesh(world: BABYLON.Matrix, mesh: BABYLON.Mesh, subMesh: BABYLON.SubMesh): void;
+        getAnimatables(): BABYLON.IAnimatable[];
+        getActiveTextures(): BABYLON.BaseTexture[];
+        hasTexture(texture: BABYLON.BaseTexture): boolean;
+        dispose(forceDisposeEffect?: boolean): void;
+        clone(name: string): MXTTestMaterial;
+        serialize(): any;
+        getClassName(): string;
+        static Parse(source: any, scene: BABYLON.Scene, rootUrl: string): MXTTestMaterial;
+    }
+}
+
+declare module BABYLON {
+    /** @hidden */
     export var asciiartPixelShader: {
         name: string;
         shader: string;
@@ -69231,6 +69277,7 @@ declare module BABYLON {
         private _computeCameraRotation;
     }
 }
+
 declare module BABYLON {
     /** @hidden */
     export var brickProceduralTexturePixelShader: {
@@ -69567,4 +69614,4 @@ declare module BABYLON {
          */
         static Parse(parsedTexture: any, scene: BABYLON.Scene, rootUrl: string): WoodProceduralTexture;
     }
-}
+}

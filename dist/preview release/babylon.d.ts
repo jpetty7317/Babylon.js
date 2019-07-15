@@ -41907,9 +41907,9 @@ declare module BABYLON {
          */
         updateGizmoPositionToMatchAttachedMesh: boolean;
         /**
-         * When set, the gizmo will always appear the same size no matter where the camera is (default: false)
+         * When set, the gizmo will always appear the same size no matter where the camera is (default: true)
          */
-        protected _updateScale: boolean;
+        updateScale: boolean;
         protected _interactionsEnabled: boolean;
         protected _attachedMeshChanged(value: Nullable<AbstractMesh>): void;
         private _beforeRenderObserver;
@@ -59671,6 +59671,7 @@ declare module BABYLON {
         shader: string;
     };
 }
+
 // Mixins
 interface Window {
     mozIndexedDB: IDBFactory;

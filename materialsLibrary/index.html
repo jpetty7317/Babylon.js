@@ -54,6 +54,7 @@
 	<script src="test/addCell.js"></script>
 	<script src="test/addbackground.js"></script>
 	<script src="test/addMix.js"></script>
+	<script src="test/addmxttest.js"></script>
 	
 	<script>
 	var backgroundSkybox = null;
@@ -83,9 +84,9 @@
 
 			// Create meshes
 			var sphere = BABYLON.Mesh.CreateSphere("sphere", 48, 30.0, scene);
-			
-			var plane = BABYLON.MeshBuilder.CreateBox("plane", { width: 30, height: 1, depth:30 }, scene);
-			plane.setEnabled(false);
+			sphere.setEnabled(false)
+
+			var plane = BABYLON.MeshBuilder.CreateBox("plane", { width: 30, height: 30, depth:30 }, scene);
 			
 			var ground = BABYLON.Mesh.CreateGround("ground", 512, 512, 32, scene, false);
 			ground.scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);
@@ -109,7 +110,8 @@
 			skybox.material = skyboxMaterial;
 			skybox.setEnabled(false);
 
-			var currentMesh = sphere;
+			var currentMesh = plane;
+			var i = 0;
 
 			// Rabbit
 			var rabbit;
@@ -218,13 +220,24 @@
 				var cell = prepareCell();
 
 				var mix = prepareMix();
-				
-				// Default to std
-				var currentMaterial = std;
-				sphere.material = std;				
-				sphere.receiveShadows = true;
 
-				gui.add(options, 'material', ['standard', 'simple', 'water', 'fire', 'lava', 'normal', 'terrain', 'pbr', 'pbrmetallicroughness', 'pbrspecularglossiness', 'fur', 'triPlanar', 'gradient', 'sky', 'grid', 'shadowOnly', 'cell', 'background', 'mix']).onFinishChange(function () {
+				var mxttest = prepareMXTTest();
+				mxttest.mainTexture = new BABYLON.Texture("/Playground/textures/testCube-diffuse.png", scene);
+				mxttest.occlusionTexture = new BABYLON.Texture("/Playground/textures/testCube-ambient-occlusion.png", scene);
+				mxttest.normalTexture = new BABYLON.Texture("/Playground/textures/testCube-normal.png", scene);
+				mxttest.metallicGlossTexture = new BABYLON.Texture("/Playground/textures/testCube-metalness.png", scene);
+				mxttest.emissionTexture = new BABYLON.Texture("/Playground/textures/testCube-emission.png", scene);
+				mxttest.detailAlbedoTexture = new BABYLON.Texture("/Playground/textures/testCube-detail-albedo.png", scene);
+				mxttest.detailNormalTexture = new BABYLON.Texture("/Playground/textures/testCube-detail-normal.png", scene);
+				mxttest.emissionColor = new BABYLON.Color3(1,1,0);
+				mxttest.normalScale = 1.0;
+				mxttest.occlusionStrength = 1.0;
+
+				// Default to std
+				var currentMaterial = mxttest;
+				plane.material = mxttest;				
+				
+				gui.add(options, 'material', ['mxttest', 'standard', 'simple', 'water', 'fire', 'lava', 'normal', 'terrain', 'pbr', 'pbrmetallicroughness', 'pbrspecularglossiness', 'fur', 'triPlanar', 'gradient', 'sky', 'grid', 'shadowOnly', 'cell', 'background', 'mix']).onFinishChange(function () {
 					water.enableRenderTargets(false);
 					skybox.material = skyboxMaterial;
 					currentMesh.isVisible = true;
@@ -293,6 +306,9 @@
 						case "mix":
 							currentMaterial = mix;
 							break;
+						case "mxttest":
+							currentMaterial = mxttest;
+							break;
 						default:
 							currentMaterial = std;
 							break;
@@ -303,7 +319,7 @@
 					window.enableMaterial(options.material);
 				});
 
-				gui.add(options, 'mesh', ['sphere', 'knot', 'plane', 'ground', 'heightMap', 'rabbit']).onFinishChange(function () {
+				gui.add(options, 'mesh', ['plane', 'knot', 'sphere', 'ground', 'heightMap', 'rabbit']).onFinishChange(function () {
 					currentMesh.setEnabled(false);
 					switch (options.mesh) {
 						case "sphere":

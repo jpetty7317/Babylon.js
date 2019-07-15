@@ -226,6 +226,11 @@
                 "output": "babylon.waterMaterial.min.js",
                 "entry": "./legacy/legacy-water.ts",
                 "preventLoadLibrary": true
+            },
+            {
+                "output": "babylon.mxtTestMaterial.min.js",
+                "entry": "./legacy/legacy-mxttest.ts",
+                "preventLoadLibrary": true
             }
         ],
         "build": {

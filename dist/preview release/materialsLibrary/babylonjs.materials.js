@@ -7,7 +7,7 @@
 		exports["babylonjs-materials"] = factory(require("babylonjs"));
 	else
 		root["MATERIALS"] = factory(root["BABYLON"]);
-})((typeof self !== "undefined" ? self : typeof global !== "undefined" ? global : this), function(__WEBPACK_EXTERNAL_MODULE_babylonjs_Misc_decorators__) {
+})((typeof self !== "undefined" ? self : typeof global !== "undefined" ? global : this), function(__WEBPACK_EXTERNAL_MODULE_babylonjs_Materials_effect__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -97,10 +97,10 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ ({
 
 /***/ "../../node_modules/tslib/tslib.es6.js":
-/*!***********************************************************!*\
-  !*** D:/Repos/Babylon.js/node_modules/tslib/tslib.es6.js ***!
-  \***********************************************************/
-/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault */
+/*!********************************************************************!*\
+  !*** /Users/johnhpetty/Babylon.js/node_modules/tslib/tslib.es6.js ***!
+  \********************************************************************/
+/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -117,6 +117,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spread", function() { return __spread; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArrays", function() { return __spreadArrays; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__await", function() { return __await; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function() { return __asyncGenerator; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function() { return __asyncDelegator; });
@@ -169,8 +170,10 @@ function __rest(s, e) {
     for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
         t[p] = s[p];
     if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
     return t;
 }
 
@@ -264,6 +267,14 @@ function __spread() {
     return ar;
 }
 
+function __spreadArrays() {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
+
 function __await(v) {
     return this instanceof __await ? (this.v = v, this) : new __await(v);
 }
@@ -355,7 +366,7 @@ module.exports = g;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cellPixelShader", function() { return cellPixelShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -388,7 +399,7 @@ var cellPixelShader = { name: name, shader: shader };
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cellVertexShader", function() { return cellVertexShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -422,7 +433,7 @@ var cellVertexShader = { name: name, shader: shader };
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CellMaterial", function() { return CellMaterial; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
-/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _cell_fragment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./cell.fragment */ "./cell/cell.fragment.ts");
 /* harmony import */ var _cell_vertex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./cell.vertex */ "./cell/cell.vertex.ts");
@@ -746,7 +757,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ShaderSpecialParts", function() { return ShaderSpecialParts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomMaterial", function() { return CustomMaterial; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -981,7 +992,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ShaderAlebdoParts", function() { return ShaderAlebdoParts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PBRCustomMaterial", function() { return PBRCustomMaterial; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -1191,7 +1202,7 @@ babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_1__["_TypeStore"].Registered
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "firePixelShader", function() { return firePixelShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -1218,7 +1229,7 @@ var firePixelShader = { name: name, shader: shader };
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fireVertexShader", function() { return fireVertexShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -1249,7 +1260,7 @@ var fireVertexShader = { name: name, shader: shader };
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FireMaterial", function() { return FireMaterial; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
-/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _fire_fragment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./fire.fragment */ "./fire/fire.fragment.ts");
 /* harmony import */ var _fire_vertex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./fire.vertex */ "./fire/fire.vertex.ts");
@@ -1610,7 +1621,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "furPixelShader", function() { return furPixelShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -1643,7 +1654,7 @@ var furPixelShader = { name: name, shader: shader };
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "furVertexShader", function() { return furVertexShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -1677,7 +1688,7 @@ var furVertexShader = { name: name, shader: shader };
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FurMaterial", function() { return FurMaterial; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
-/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _fur_fragment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./fur.fragment */ "./fur/fur.fragment.ts");
 /* harmony import */ var _fur_vertex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./fur.vertex */ "./fur/fur.vertex.ts");
@@ -2187,7 +2198,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gradientPixelShader", function() { return gradientPixelShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -2220,7 +2231,7 @@ var gradientPixelShader = { name: name, shader: shader };
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gradientVertexShader", function() { return gradientVertexShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -2254,7 +2265,7 @@ var gradientVertexShader = { name: name, shader: shader };
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GradientMaterial", function() { return GradientMaterial; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
-/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _gradient_fragment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./gradient.fragment */ "./gradient/gradient.fragment.ts");
 /* harmony import */ var _gradient_vertex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./gradient.vertex */ "./gradient/gradient.vertex.ts");
@@ -2544,7 +2555,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gridPixelShader", function() { return gridPixelShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -2568,7 +2579,7 @@ var gridPixelShader = { name: name, shader: shader };
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gridVertexShader", function() { return gridVertexShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -2593,7 +2604,7 @@ var gridVertexShader = { name: name, shader: shader };
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GridMaterial", function() { return GridMaterial; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
-/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _grid_fragment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./grid.fragment */ "./grid/grid.fragment.ts");
 /* harmony import */ var _grid_vertex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./grid.vertex */ "./grid/grid.vertex.ts");
@@ -2862,7 +2873,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!******************!*\
   !*** ./index.ts ***!
   \******************/
-/*! exports provided: CellMaterial, CustomShaderStructure, ShaderSpecialParts, CustomMaterial, ShaderAlebdoParts, PBRCustomMaterial, FireMaterial, FurMaterial, GradientMaterial, GridMaterial, LavaMaterial, MixMaterial, NormalMaterial, ShadowOnlyMaterial, SimpleMaterial, SkyMaterial, TerrainMaterial, TriPlanarMaterial, WaterMaterial */
+/*! exports provided: CellMaterial, CustomShaderStructure, ShaderSpecialParts, CustomMaterial, ShaderAlebdoParts, PBRCustomMaterial, FireMaterial, FurMaterial, GradientMaterial, GridMaterial, LavaMaterial, MixMaterial, NormalMaterial, ShadowOnlyMaterial, SimpleMaterial, SkyMaterial, TerrainMaterial, TriPlanarMaterial, WaterMaterial, MXTTestMaterial */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2920,6 +2931,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _water__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./water */ "./water/index.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WaterMaterial", function() { return _water__WEBPACK_IMPORTED_MODULE_14__["WaterMaterial"]; });
 
+/* harmony import */ var _mxttest__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./mxttest */ "./mxttest/index.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MXTTestMaterial", function() { return _mxttest__WEBPACK_IMPORTED_MODULE_15__["MXTTestMaterial"]; });
+
+
 
 
 
@@ -2966,7 +2981,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lavaPixelShader", function() { return lavaPixelShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -2999,7 +3014,7 @@ var lavaPixelShader = { name: name, shader: shader };
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lavaVertexShader", function() { return lavaVertexShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -3033,7 +3048,7 @@ var lavaVertexShader = { name: name, shader: shader };
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LavaMaterial", function() { return LavaMaterial; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
-/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _lava_fragment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lava.fragment */ "./lava/lava.fragment.ts");
 /* harmony import */ var _lava_vertex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lava.vertex */ "./lava/lava.vertex.ts");
@@ -3419,7 +3434,7 @@ babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["_TypeStore"].RegisteredT
 /*!**************************!*\
   !*** ./legacy/legacy.ts ***!
   \**************************/
-/*! exports provided: CellMaterial, CustomShaderStructure, ShaderSpecialParts, CustomMaterial, ShaderAlebdoParts, PBRCustomMaterial, FireMaterial, FurMaterial, GradientMaterial, GridMaterial, LavaMaterial, MixMaterial, NormalMaterial, ShadowOnlyMaterial, SimpleMaterial, SkyMaterial, TerrainMaterial, TriPlanarMaterial, WaterMaterial */
+/*! exports provided: CellMaterial, CustomShaderStructure, ShaderSpecialParts, CustomMaterial, ShaderAlebdoParts, PBRCustomMaterial, FireMaterial, FurMaterial, GradientMaterial, GridMaterial, LavaMaterial, MixMaterial, NormalMaterial, ShadowOnlyMaterial, SimpleMaterial, SkyMaterial, TerrainMaterial, TriPlanarMaterial, WaterMaterial, MXTTestMaterial */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3462,6 +3477,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TriPlanarMaterial", function() { return _index__WEBPACK_IMPORTED_MODULE_0__["TriPlanarMaterial"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WaterMaterial", function() { return _index__WEBPACK_IMPORTED_MODULE_0__["WaterMaterial"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MXTTestMaterial", function() { return _index__WEBPACK_IMPORTED_MODULE_0__["MXTTestMaterial"]; });
 
 
 /**
@@ -3510,7 +3527,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mixPixelShader", function() { return mixPixelShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -3543,7 +3560,7 @@ var mixPixelShader = { name: name, shader: shader };
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mixVertexShader", function() { return mixVertexShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -3577,7 +3594,7 @@ var mixVertexShader = { name: name, shader: shader };
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MixMaterial", function() { return MixMaterial; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
-/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _mix_fragment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mix.fragment */ "./mix/mix.fragment.ts");
 /* harmony import */ var _mix_vertex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mix.vertex */ "./mix/mix.vertex.ts");
@@ -4064,6 +4081,427 @@ babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["_TypeStore"].RegisteredT
 
 /***/ }),
 
+/***/ "./mxttest/index.ts":
+/*!**************************!*\
+  !*** ./mxttest/index.ts ***!
+  \**************************/
+/*! exports provided: MXTTestMaterial */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _mxttestMaterial__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mxttestMaterial */ "./mxttest/mxttestMaterial.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MXTTestMaterial", function() { return _mxttestMaterial__WEBPACK_IMPORTED_MODULE_0__["MXTTestMaterial"]; });
+
+
+
+
+/***/ }),
+
+/***/ "./mxttest/mxttest.fragment.ts":
+/*!*************************************!*\
+  !*** ./mxttest/mxttest.fragment.ts ***!
+  \*************************************/
+/*! exports provided: mxttestPixelShader */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mxttestPixelShader", function() { return mxttestPixelShader; });
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
+
+
+
+
+
+
+
+
+
+
+
+
+var name = 'mxttestPixelShader';
+var shader = "precision highp float;\n\nuniform vec3 vEyePosition;\nuniform vec4 vDiffuseColor;\n\nvarying vec3 vPositionW;\n#ifdef NORMAL\nvarying vec3 vNormalW;\n#endif\n#ifdef LIGHTING\n\n#include<helperFunctions>\n\n#include<__decl__lightFragment>[0]\n#include<__decl__lightFragment>[1]\n#include<__decl__lightFragment>[2]\n#include<__decl__lightFragment>[3]\n#include<lightsFragmentFunctions>\n#include<shadowsFragmentFunctions>\n#endif\n\n#ifdef DIFFUSE\nvarying vec2 vDiffuseUV;\nuniform sampler2D diffuseSampler;\nuniform vec2 vDiffuseInfos;\n#endif\n#include<clipPlaneFragmentDeclaration>\n\n#include<fogFragmentDeclaration>\nvoid main(void) {\n#include<clipPlaneFragment>\nvec3 viewDirectionW=normalize(vEyePosition-vPositionW);\n\nvec4 baseColor=vec4(1.,1.,1.,1.);\nvec3 diffuseColor=vDiffuseColor.rgb;\n\nfloat alpha=vDiffuseColor.a;\n#ifdef DIFFUSE\nbaseColor=texture2D(diffuseSampler,vDiffuseUV);\n#ifdef ALPHATEST\nif (baseColor.a<0.4)\ndiscard;\n#endif\n#include<depthPrePass>\nbaseColor.rgb*=vDiffuseInfos.y;\n#endif\n#ifdef NORMAL\nbaseColor=mix(baseColor,vec4(vNormalW,1.0),0.5);\n#endif\n\n#ifdef NORMAL\nvec3 normalW=normalize(vNormalW);\n#else\nvec3 normalW=vec3(1.0,1.0,1.0);\n#endif\n\n#ifdef LIGHTING\nvec3 diffuseBase=vec3(0.,0.,0.);\nlightingInfo info;\nfloat shadow=1.;\nfloat glossiness=0.;\n#include<lightFragment>[0]\n#include<lightFragment>[1]\n#include<lightFragment>[2]\n#include<lightFragment>[3]\nvec3 finalDiffuse=clamp(diffuseBase*diffuseColor,0.0,1.0)*baseColor.rgb;\n#else\nvec3 finalDiffuse=baseColor.rgb;\n#endif\n\nvec4 color=vec4(finalDiffuse,alpha);\n#include<fogFragment>\ngl_FragColor=vec4(1.0,0.0,0.0,1.0);\n}";
+babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__["Effect"].ShadersStore[name] = shader;
+/** @hidden */
+var mxttestPixelShader = { name: name, shader: shader };
+
+
+/***/ }),
+
+/***/ "./mxttest/mxttest.vertex.ts":
+/*!***********************************!*\
+  !*** ./mxttest/mxttest.vertex.ts ***!
+  \***********************************/
+/*! exports provided: mxttestVertexShader */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mxttestVertexShader", function() { return mxttestVertexShader; });
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
+
+
+
+
+
+
+
+
+
+
+
+
+var name = 'mxttestVertexShader';
+var shader = "precision highp float;\n\nattribute vec3 position;\n#ifdef NORMAL\nattribute vec3 normal;\n#endif\n#ifdef UV1\nattribute vec2 uv;\n#endif\n#ifdef UV2\nattribute vec2 uv2;\n#endif\n#ifdef VERTEXCOLOR\nattribute vec4 color;\n#endif\n#include<bonesDeclaration>\n\n#include<instancesDeclaration>\nuniform mat4 view;\nuniform mat4 viewProjection;\n#ifdef DIFFUSE\nvarying vec2 vDiffuseUV;\nuniform mat4 diffuseMatrix;\nuniform vec2 vDiffuseInfos;\n#endif\n#ifdef POINTSIZE\nuniform float pointSize;\n#endif\n\nvarying vec3 vPositionW;\n#ifdef NORMAL\nvarying vec3 vNormalW;\n#endif\n#include<clipPlaneVertexDeclaration>\n#include<fogVertexDeclaration>\n#include<__decl__lightFragment>[0..maxSimultaneousLights]\nvoid main(void) {\n#include<instancesVertex>\n#include<bonesVertex>\ngl_Position=viewProjection*finalWorld*vec4(position,1.0);\nvec4 worldPos=finalWorld*vec4(position,1.0);\nvPositionW=vec3(worldPos);\n#ifdef NORMAL\nvNormalW=normalize(vec3(finalWorld*vec4(normal,0.0)));\n#endif\n\n#ifndef UV1\nvec2 uv=vec2(0.,0.);\n#endif\n#ifndef UV2\nvec2 uv2=vec2(0.,0.);\n#endif\n#ifdef DIFFUSE\nif (vDiffuseInfos.x == 0.)\n{\nvDiffuseUV=vec2(diffuseMatrix*vec4(uv,1.0,0.0));\n}\nelse\n{\nvDiffuseUV=vec2(diffuseMatrix*vec4(uv2,1.0,0.0));\n}\n#endif\n\n#include<clipPlaneVertex>\n\n#include<fogVertex>\n#include<shadowsVertex>[0..maxSimultaneousLights]\n\n#ifdef POINTSIZE\ngl_PointSize=pointSize;\n#endif\n}\n";
+babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__["Effect"].ShadersStore[name] = shader;
+/** @hidden */
+var mxttestVertexShader = { name: name, shader: shader };
+
+
+/***/ }),
+
+/***/ "./mxttest/mxttestMaterial.ts":
+/*!************************************!*\
+  !*** ./mxttest/mxttestMaterial.ts ***!
+  \************************************/
+/*! exports provided: MXTTestMaterial */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MXTTestMaterial", function() { return MXTTestMaterial; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
+/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Materials/effect");
+/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _mxttest_fragment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mxttest.fragment */ "./mxttest/mxttest.fragment.ts");
+/* harmony import */ var _mxttest_vertex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mxttest.vertex */ "./mxttest/mxttest.vertex.ts");
+
+
+
+
+
+
+
+
+
+
+
+
+
+var MXTTestMaterialDefines = /** @class */ (function (_super) {
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](MXTTestMaterialDefines, _super);
+    function MXTTestMaterialDefines() {
+        var _this = _super.call(this) || this;
+        _this.DIFFUSE = false;
+        _this.CLIPPLANE = false;
+        _this.CLIPPLANE2 = false;
+        _this.CLIPPLANE3 = false;
+        _this.CLIPPLANE4 = false;
+        _this.ALPHATEST = false;
+        _this.DEPTHPREPASS = false;
+        _this.POINTSIZE = false;
+        _this.FOG = false;
+        _this.LIGHT0 = false;
+        _this.LIGHT1 = false;
+        _this.LIGHT2 = false;
+        _this.LIGHT3 = false;
+        _this.SPOTLIGHT0 = false;
+        _this.SPOTLIGHT1 = false;
+        _this.SPOTLIGHT2 = false;
+        _this.SPOTLIGHT3 = false;
+        _this.HEMILIGHT0 = false;
+        _this.HEMILIGHT1 = false;
+        _this.HEMILIGHT2 = false;
+        _this.HEMILIGHT3 = false;
+        _this.DIRLIGHT0 = false;
+        _this.DIRLIGHT1 = false;
+        _this.DIRLIGHT2 = false;
+        _this.DIRLIGHT3 = false;
+        _this.POINTLIGHT0 = false;
+        _this.POINTLIGHT1 = false;
+        _this.POINTLIGHT2 = false;
+        _this.POINTLIGHT3 = false;
+        _this.SHADOW0 = false;
+        _this.SHADOW1 = false;
+        _this.SHADOW2 = false;
+        _this.SHADOW3 = false;
+        _this.SHADOWS = false;
+        _this.SHADOWESM0 = false;
+        _this.SHADOWESM1 = false;
+        _this.SHADOWESM2 = false;
+        _this.SHADOWESM3 = false;
+        _this.SHADOWPOISSON0 = false;
+        _this.SHADOWPOISSON1 = false;
+        _this.SHADOWPOISSON2 = false;
+        _this.SHADOWPOISSON3 = false;
+        _this.SHADOWPCF0 = false;
+        _this.SHADOWPCF1 = false;
+        _this.SHADOWPCF2 = false;
+        _this.SHADOWPCF3 = false;
+        _this.SHADOWPCSS0 = false;
+        _this.SHADOWPCSS1 = false;
+        _this.SHADOWPCSS2 = false;
+        _this.SHADOWPCSS3 = false;
+        _this.NORMAL = false;
+        _this.UV1 = false;
+        _this.UV2 = false;
+        _this.NUM_BONE_INFLUENCERS = 0;
+        _this.BonesPerMesh = 0;
+        _this.INSTANCES = false;
+        _this.LIGHTING = false;
+        _this.rebuild();
+        return _this;
+    }
+    return MXTTestMaterialDefines;
+}(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["MaterialDefines"]));
+var MXTTestMaterial = /** @class */ (function (_super) {
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](MXTTestMaterial, _super);
+    function MXTTestMaterial(name, scene) {
+        var _this = _super.call(this, name, scene) || this;
+        _this.diffuseColor = new babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["Color3"](1, 1, 1);
+        _this._disableLighting = false;
+        _this._maxSimultaneousLights = 4;
+        return _this;
+    }
+    MXTTestMaterial.prototype.needAlphaBlending = function () {
+        return (this.alpha < 1.0);
+    };
+    MXTTestMaterial.prototype.needAlphaBlendingForMesh = function (mesh) {
+        return this.needAlphaBlending() || (mesh.visibility < 1.0);
+    };
+    MXTTestMaterial.prototype.needAlphaTesting = function () {
+        return false;
+    };
+    MXTTestMaterial.prototype.getAlphaTestTexture = function () {
+        return null;
+    };
+    // Methods
+    MXTTestMaterial.prototype.isReadyForSubMesh = function (mesh, subMesh, useInstances) {
+        if (this.isFrozen) {
+            if (this._wasPreviouslyReady && subMesh.effect) {
+                return true;
+            }
+        }
+        if (!subMesh._materialDefines) {
+            subMesh._materialDefines = new MXTTestMaterialDefines();
+        }
+        var defines = subMesh._materialDefines;
+        var scene = this.getScene();
+        if (!this.checkReadyOnEveryCall && subMesh.effect) {
+            if (this._renderId === scene.getRenderId()) {
+                return true;
+            }
+        }
+        var engine = scene.getEngine();
+        // Textures
+        if (defines._areTexturesDirty) {
+            defines._needUVs = false;
+            if (scene.texturesEnabled) {
+                if (this._diffuseTexture && babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["MaterialFlags"].DiffuseTextureEnabled) {
+                    if (!this._diffuseTexture.isReady()) {
+                        return false;
+                    }
+                    else {
+                        defines._needUVs = true;
+                        defines.DIFFUSE = true;
+                    }
+                }
+            }
+        }
+        // Misc.
+        babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["MaterialHelper"].PrepareDefinesForMisc(mesh, scene, false, this.pointsCloud, this.fogEnabled, this._shouldTurnAlphaTestOn(mesh), defines);
+        // Lights
+        defines._needNormals = true;
+        babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["MaterialHelper"].PrepareDefinesForLights(scene, mesh, defines, false, this._maxSimultaneousLights, this._disableLighting);
+        // Values that need to be evaluated on every frame
+        babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["MaterialHelper"].PrepareDefinesForFrameBoundValues(scene, engine, defines, useInstances ? true : false);
+        defines.LIGHTING = !this._disableLighting;
+        // Attribs
+        babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["MaterialHelper"].PrepareDefinesForAttributes(mesh, defines, true, true);
+        // Get correct effect
+        if (defines.isDirty) {
+            defines.markAsProcessed();
+            scene.resetCachedMaterial();
+            // Fallbacks
+            var fallbacks = new babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["EffectFallbacks"]();
+            if (defines.FOG) {
+                fallbacks.addFallback(1, "FOG");
+            }
+            babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["MaterialHelper"].HandleFallbacksForShadows(defines, fallbacks);
+            if (defines.NUM_BONE_INFLUENCERS > 0) {
+                fallbacks.addCPUSkinningFallback(0, mesh);
+            }
+            //Attributes
+            var attribs = [babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["VertexBuffer"].PositionKind];
+            if (defines.NORMAL) {
+                attribs.push(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["VertexBuffer"].NormalKind);
+            }
+            if (defines.UV1) {
+                attribs.push(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["VertexBuffer"].UVKind);
+            }
+            if (defines.UV2) {
+                attribs.push(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["VertexBuffer"].UV2Kind);
+            }
+            babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["MaterialHelper"].PrepareAttributesForBones(attribs, mesh, defines, fallbacks);
+            babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["MaterialHelper"].PrepareAttributesForInstances(attribs, defines);
+            var shaderName = "mxttest";
+            var join = defines.toString();
+            var uniforms = ["world", "view", "viewProjection", "vEyePosition", "vLightsType", "vDiffuseColor",
+                "vFogInfos", "vFogColor", "pointSize",
+                "vDiffuseInfos",
+                "mBones",
+                "vClipPlane", "vClipPlane2", "vClipPlane3", "vClipPlane4", "diffuseMatrix"
+            ];
+            var samplers = ["diffuseSampler"];
+            var uniformBuffers = new Array();
+            babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["MaterialHelper"].PrepareUniformsAndSamplersList({
+                uniformsNames: uniforms,
+                uniformBuffersNames: uniformBuffers,
+                samplers: samplers,
+                defines: defines,
+                maxSimultaneousLights: 4
+            });
+            subMesh.setEffect(scene.getEngine().createEffect(shaderName, {
+                attributes: attribs,
+                uniformsNames: uniforms,
+                uniformBuffersNames: uniformBuffers,
+                samplers: samplers,
+                defines: join,
+                fallbacks: fallbacks,
+                onCompiled: this.onCompiled,
+                onError: this.onError,
+                indexParameters: { maxSimultaneousLights: 4 }
+            }, engine), defines);
+        }
+        if (!subMesh.effect || !subMesh.effect.isReady()) {
+            return false;
+        }
+        this._renderId = scene.getRenderId();
+        this._wasPreviouslyReady = true;
+        return true;
+    };
+    MXTTestMaterial.prototype.bindForSubMesh = function (world, mesh, subMesh) {
+        var scene = this.getScene();
+        var defines = subMesh._materialDefines;
+        if (!defines) {
+            return;
+        }
+        var effect = subMesh.effect;
+        if (!effect) {
+            return;
+        }
+        this._activeEffect = effect;
+        // Matrices
+        this.bindOnlyWorldMatrix(world);
+        this._activeEffect.setMatrix("viewProjection", scene.getTransformMatrix());
+        // Bones
+        babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["MaterialHelper"].BindBonesParameters(mesh, this._activeEffect);
+        if (this._mustRebind(scene, effect)) {
+            // Textures
+            if (this.diffuseTexture && babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["MaterialFlags"].DiffuseTextureEnabled) {
+                this._activeEffect.setTexture("diffuseSampler", this.diffuseTexture);
+                this._activeEffect.setFloat2("vDiffuseInfos", this.diffuseTexture.coordinatesIndex, this.diffuseTexture.level);
+                this._activeEffect.setMatrix("diffuseMatrix", this.diffuseTexture.getTextureMatrix());
+            }
+            // Clip plane
+            babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["MaterialHelper"].BindClipPlane(this._activeEffect, scene);
+            // Point size
+            if (this.pointsCloud) {
+                this._activeEffect.setFloat("pointSize", this.pointSize);
+            }
+            babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["MaterialHelper"].BindEyePosition(effect, scene);
+        }
+        this._activeEffect.setColor4("vDiffuseColor", this.diffuseColor, this.alpha * mesh.visibility);
+        // Lights
+        if (scene.lightsEnabled && !this.disableLighting) {
+            babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["MaterialHelper"].BindLights(scene, mesh, this._activeEffect, defines);
+        }
+        // View
+        if (scene.fogEnabled && mesh.applyFog && scene.fogMode !== babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["Scene"].FOGMODE_NONE) {
+            this._activeEffect.setMatrix("view", scene.getViewMatrix());
+        }
+        // Fog
+        babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["MaterialHelper"].BindFogParameters(scene, mesh, this._activeEffect);
+        this._afterBind(mesh, this._activeEffect);
+    };
+    MXTTestMaterial.prototype.getAnimatables = function () {
+        var results = [];
+        if (this.diffuseTexture && this.diffuseTexture.animations && this.diffuseTexture.animations.length > 0) {
+            results.push(this.diffuseTexture);
+        }
+        return results;
+    };
+    MXTTestMaterial.prototype.getActiveTextures = function () {
+        var activeTextures = _super.prototype.getActiveTextures.call(this);
+        if (this._diffuseTexture) {
+            activeTextures.push(this._diffuseTexture);
+        }
+        return activeTextures;
+    };
+    MXTTestMaterial.prototype.hasTexture = function (texture) {
+        if (_super.prototype.hasTexture.call(this, texture)) {
+            return true;
+        }
+        if (this.diffuseTexture === texture) {
+            return true;
+        }
+        return false;
+    };
+    MXTTestMaterial.prototype.dispose = function (forceDisposeEffect) {
+        if (this.diffuseTexture) {
+            this.diffuseTexture.dispose();
+        }
+        _super.prototype.dispose.call(this, forceDisposeEffect);
+    };
+    MXTTestMaterial.prototype.clone = function (name) {
+        var _this = this;
+        return babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["SerializationHelper"].Clone(function () { return new MXTTestMaterial(name, _this.getScene()); }, this);
+    };
+    MXTTestMaterial.prototype.serialize = function () {
+        var serializationObject = babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["SerializationHelper"].Serialize(this);
+        serializationObject.customType = "BABYLON.MXTTestMaterial";
+        return serializationObject;
+    };
+    MXTTestMaterial.prototype.getClassName = function () {
+        return "MXTTestMaterial";
+    };
+    // Statics
+    MXTTestMaterial.Parse = function (source, scene, rootUrl) {
+        return babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["SerializationHelper"].Parse(function () { return new MXTTestMaterial(source.name, scene); }, source, scene, rootUrl);
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["serializeAsTexture"])("diffuseTexture")
+    ], MXTTestMaterial.prototype, "_diffuseTexture", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["expandToProperty"])("_markAllSubMeshesAsTexturesDirty")
+    ], MXTTestMaterial.prototype, "diffuseTexture", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["serializeAsColor3"])()
+    ], MXTTestMaterial.prototype, "diffuseColor", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["serialize"])("disableLighting")
+    ], MXTTestMaterial.prototype, "_disableLighting", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["expandToProperty"])("_markAllSubMeshesAsLightsDirty")
+    ], MXTTestMaterial.prototype, "disableLighting", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["serialize"])("maxSimultaneousLights")
+    ], MXTTestMaterial.prototype, "_maxSimultaneousLights", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["expandToProperty"])("_markAllSubMeshesAsLightsDirty")
+    ], MXTTestMaterial.prototype, "maxSimultaneousLights", void 0);
+    return MXTTestMaterial;
+}(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["PushMaterial"]));
+
+babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["_TypeStore"].RegisteredTypes["BABYLON.MXTTestMaterial"] = MXTTestMaterial;
+
+
+/***/ }),
+
 /***/ "./normal/index.ts":
 /*!*************************!*\
   !*** ./normal/index.ts ***!
@@ -4091,7 +4529,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "normalPixelShader", function() { return normalPixelShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -4106,7 +4544,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var name = 'normalPixelShader';
-var shader = "precision highp float;\n\nuniform vec3 vEyePosition;\nuniform vec4 vDiffuseColor;\n\nvarying vec3 vPositionW;\n#ifdef NORMAL\nvarying vec3 vNormalW;\n#endif\n#ifdef LIGHTING\n\n#include<helperFunctions>\n\n#include<__decl__lightFragment>[0]\n#include<__decl__lightFragment>[1]\n#include<__decl__lightFragment>[2]\n#include<__decl__lightFragment>[3]\n#include<lightsFragmentFunctions>\n#include<shadowsFragmentFunctions>\n#endif\n\n#ifdef DIFFUSE\nvarying vec2 vDiffuseUV;\nuniform sampler2D diffuseSampler;\nuniform vec2 vDiffuseInfos;\n#endif\n#include<clipPlaneFragmentDeclaration>\n\n#include<fogFragmentDeclaration>\nvoid main(void) {\n#include<clipPlaneFragment>\nvec3 viewDirectionW=normalize(vEyePosition-vPositionW);\n\nvec4 baseColor=vec4(1.,1.,1.,1.);\nvec3 diffuseColor=vDiffuseColor.rgb;\n\nfloat alpha=vDiffuseColor.a;\n#ifdef DIFFUSE\nbaseColor=texture2D(diffuseSampler,vDiffuseUV);\n#ifdef ALPHATEST\nif (baseColor.a<0.4)\ndiscard;\n#endif\n#include<depthPrePass>\nbaseColor.rgb*=vDiffuseInfos.y;\n#endif\n#ifdef NORMAL\nbaseColor=mix(baseColor,vec4(vNormalW,1.0),0.5);\n#endif\n\n#ifdef NORMAL\nvec3 normalW=normalize(vNormalW);\n#else\nvec3 normalW=vec3(1.0,1.0,1.0);\n#endif\n\n#ifdef LIGHTING\nvec3 diffuseBase=vec3(0.,0.,0.);\nlightingInfo info;\nfloat shadow=1.;\nfloat glossiness=0.;\n#include<lightFragment>[0]\n#include<lightFragment>[1]\n#include<lightFragment>[2]\n#include<lightFragment>[3]\nvec3 finalDiffuse=clamp(diffuseBase*diffuseColor,0.0,1.0)*baseColor.rgb;\n#else\nvec3 finalDiffuse=baseColor.rgb;\n#endif\n\nvec4 color=vec4(finalDiffuse,alpha);\n#include<fogFragment>\ngl_FragColor=color;\n}";
+var shader = "precision highp float;\n\nuniform vec3 vEyePosition;\nuniform vec4 vDiffuseColor;\n\nvarying vec3 vPositionW;\n#ifdef NORMAL\nvarying vec3 vNormalW;\n#endif\n#ifdef LIGHTING\n\n#include<helperFunctions>\n\n#include<__decl__lightFragment>[0]\n#include<__decl__lightFragment>[1]\n#include<__decl__lightFragment>[2]\n#include<__decl__lightFragment>[3]\n#include<lightsFragmentFunctions>\n#include<shadowsFragmentFunctions>\n#endif\n\n#ifdef DIFFUSE\nvarying vec2 vDiffuseUV;\nuniform sampler2D diffuseSampler;\nuniform vec2 vDiffuseInfos;\n#endif\n#include<clipPlaneFragmentDeclaration>\n\n#include<fogFragmentDeclaration>\nvoid main(void) {\n#include<clipPlaneFragment>\nvec3 viewDirectionW=normalize(vEyePosition-vPositionW);\n\nvec4 baseColor=vec4(1.,1.,1.,1.);\nvec3 diffuseColor=vDiffuseColor.rgb;\n\nfloat alpha=vDiffuseColor.a;\n#ifdef DIFFUSE\nbaseColor=texture2D(diffuseSampler,vDiffuseUV);\n#ifdef ALPHATEST\nif (baseColor.a<0.4)\ndiscard;\n#endif\n#include<depthPrePass>\nbaseColor.rgb*=vDiffuseInfos.y;\n#endif\n#ifdef NORMAL\nbaseColor=mix(baseColor,vec4(vNormalW,1.0),0.5);\n#endif\n\n#ifdef NORMAL\nvec3 normalW=normalize(vNormalW);\n#else\nvec3 normalW=vec3(1.0,1.0,1.0);\n#endif\n\n#ifdef LIGHTING\nvec3 diffuseBase=vec3(0.,0.,0.);\nlightingInfo info;\nfloat shadow=1.;\nfloat glossiness=0.;\n#include<lightFragment>[0]\n#include<lightFragment>[1]\n#include<lightFragment>[2]\n#include<lightFragment>[3]\nvec3 finalDiffuse=clamp(diffuseBase*diffuseColor,0.0,1.0)*baseColor.rgb;\n#else\nvec3 finalDiffuse=baseColor.rgb;\n#endif\n\nvec4 color=vec4(finalDiffuse,alpha);\n#include<fogFragment>\ngl_FragColor=vec4(0.0,1.0,1.0,1.0);\n}";
 babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__["Effect"].ShadersStore[name] = shader;
 /** @hidden */
 var normalPixelShader = { name: name, shader: shader };
@@ -4124,7 +4562,7 @@ var normalPixelShader = { name: name, shader: shader };
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "normalVertexShader", function() { return normalVertexShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -4158,7 +4596,7 @@ var normalVertexShader = { name: name, shader: shader };
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NormalMaterial", function() { return NormalMaterial; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
-/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _normal_fragment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./normal.fragment */ "./normal/normal.fragment.ts");
 /* harmony import */ var _normal_vertex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./normal.vertex */ "./normal/normal.vertex.ts");
@@ -4512,7 +4950,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "shadowOnlyPixelShader", function() { return shadowOnlyPixelShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -4544,7 +4982,7 @@ var shadowOnlyPixelShader = { name: name, shader: shader };
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "shadowOnlyVertexShader", function() { return shadowOnlyVertexShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -4578,7 +5016,7 @@ var shadowOnlyVertexShader = { name: name, shader: shader };
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ShadowOnlyMaterial", function() { return ShadowOnlyMaterial; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
-/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _shadowOnly_fragment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shadowOnly.fragment */ "./shadowOnly/shadowOnly.fragment.ts");
 /* harmony import */ var _shadowOnly_vertex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./shadowOnly.vertex */ "./shadowOnly/shadowOnly.vertex.ts");
@@ -4824,7 +5262,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "simplePixelShader", function() { return simplePixelShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -4857,7 +5295,7 @@ var simplePixelShader = { name: name, shader: shader };
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "simpleVertexShader", function() { return simpleVertexShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -4891,7 +5329,7 @@ var simpleVertexShader = { name: name, shader: shader };
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SimpleMaterial", function() { return SimpleMaterial; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
-/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _simple_fragment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./simple.fragment */ "./simple/simple.fragment.ts");
 /* harmony import */ var _simple_vertex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./simple.vertex */ "./simple/simple.vertex.ts");
@@ -5203,7 +5641,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "skyPixelShader", function() { return skyPixelShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -5229,7 +5667,7 @@ var skyPixelShader = { name: name, shader: shader };
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "skyVertexShader", function() { return skyVertexShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -5256,7 +5694,7 @@ var skyVertexShader = { name: name, shader: shader };
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SkyMaterial", function() { return SkyMaterial; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
-/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _sky_fragment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sky.fragment */ "./sky/sky.fragment.ts");
 /* harmony import */ var _sky_vertex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sky.vertex */ "./sky/sky.vertex.ts");
@@ -5614,7 +6052,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "terrainPixelShader", function() { return terrainPixelShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -5647,7 +6085,7 @@ var terrainPixelShader = { name: name, shader: shader };
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "terrainVertexShader", function() { return terrainVertexShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -5681,7 +6119,7 @@ var terrainVertexShader = { name: name, shader: shader };
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TerrainMaterial", function() { return TerrainMaterial; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
-/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _terrain_fragment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./terrain.fragment */ "./terrain/terrain.fragment.ts");
 /* harmony import */ var _terrain_vertex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./terrain.vertex */ "./terrain/terrain.vertex.ts");
@@ -6124,7 +6562,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TriPlanarMaterial", function() { return TriPlanarMaterial; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
-/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _triplanar_fragment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./triplanar.fragment */ "./triPlanar/triplanar.fragment.ts");
 /* harmony import */ var _triplanar_vertex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./triplanar.vertex */ "./triPlanar/triplanar.vertex.ts");
@@ -6529,7 +6967,7 @@ babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["_TypeStore"].RegisteredT
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "triplanarPixelShader", function() { return triplanarPixelShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -6562,7 +7000,7 @@ var triplanarPixelShader = { name: name, shader: shader };
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "triplanarVertexShader", function() { return triplanarVertexShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -6612,7 +7050,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "waterPixelShader", function() { return waterPixelShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -6646,7 +7084,7 @@ var waterPixelShader = { name: name, shader: shader };
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "waterVertexShader", function() { return waterVertexShader; });
-/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babylonjs/Materials/effect */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Materials_effect__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -6682,7 +7120,7 @@ var waterVertexShader = { name: name, shader: shader };
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WaterMaterial", function() { return WaterMaterial; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
-/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Misc/decorators");
+/* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babylonjs/Misc/decorators */ "babylonjs/Materials/effect");
 /* harmony import */ var babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _water_fragment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./water.fragment */ "./water/water.fragment.ts");
 /* harmony import */ var _water_vertex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./water.vertex */ "./water/water.vertex.ts");
@@ -7325,14 +7763,14 @@ babylonjs_Misc_decorators__WEBPACK_IMPORTED_MODULE_1__["_TypeStore"].RegisteredT
 
 /***/ }),
 
-/***/ "babylonjs/Misc/decorators":
+/***/ "babylonjs/Materials/effect":
 /*!****************************************************************************************************!*\
   !*** external {"root":"BABYLON","commonjs":"babylonjs","commonjs2":"babylonjs","amd":"babylonjs"} ***!
   \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE_babylonjs_Misc_decorators__;
+module.exports = __WEBPACK_EXTERNAL_MODULE_babylonjs_Materials_effect__;
 
 /***/ })
 

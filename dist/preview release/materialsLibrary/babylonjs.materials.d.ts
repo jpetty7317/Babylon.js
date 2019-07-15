@@ -983,4 +983,45 @@ declare module BABYLON {
         static Parse(source: any, scene: BABYLON.Scene, rootUrl: string): WaterMaterial;
         static CreateDefaultMesh(name: string, scene: BABYLON.Scene): BABYLON.Mesh;
     }
-}
+}
+declare module BABYLON {
+    /** @hidden */
+    export var mxttestPixelShader: {
+        name: string;
+        shader: string;
+    };
+}
+declare module BABYLON {
+    /** @hidden */
+    export var mxttestVertexShader: {
+        name: string;
+        shader: string;
+    };
+}
+declare module BABYLON {
+    export class MXTTestMaterial extends BABYLON.PushMaterial {
+        private _diffuseTexture;
+        diffuseTexture: BABYLON.BaseTexture;
+        diffuseColor: BABYLON.Color3;
+        private _disableLighting;
+        disableLighting: boolean;
+        private _maxSimultaneousLights;
+        maxSimultaneousLights: number;
+        private _renderId;
+        constructor(name: string, scene: BABYLON.Scene);
+        needAlphaBlending(): boolean;
+        needAlphaBlendingForMesh(mesh: BABYLON.AbstractMesh): boolean;
+        needAlphaTesting(): boolean;
+        getAlphaTestTexture(): BABYLON.Nullable<BABYLON.BaseTexture>;
+        isReadyForSubMesh(mesh: BABYLON.AbstractMesh, subMesh: BABYLON.SubMesh, useInstances?: boolean): boolean;
+        bindForSubMesh(world: BABYLON.Matrix, mesh: BABYLON.Mesh, subMesh: BABYLON.SubMesh): void;
+        getAnimatables(): BABYLON.IAnimatable[];
+        getActiveTextures(): BABYLON.BaseTexture[];
+        hasTexture(texture: BABYLON.BaseTexture): boolean;
+        dispose(forceDisposeEffect?: boolean): void;
+        clone(name: string): MXTTestMaterial;
+        serialize(): any;
+        getClassName(): string;
+        static Parse(source: any, scene: BABYLON.Scene, rootUrl: string): MXTTestMaterial;
+    }
+}

@@ -1,8 +1,8 @@
 //UI
 var gui = new dat.GUI();
 var options = {
-	material: "standard",
-	mesh: "sphere",
+	material: "mxttest",
+	mesh: "plane",
 	hemisphericLight: true,
 	pointLight: false,
 	directionalLight: false,
